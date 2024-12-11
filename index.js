@@ -14,6 +14,10 @@ const transporter = nodemailer.createTransport({
     },
 });
 
+app.get('/check', (req, res)=>{
+    res.send('working fine');
+})
+
 app.post('/send-email', (req,res)=>{
     const {to, subject, text} = req.body;
     const mailOptions={
